@@ -1,4 +1,4 @@
-name: Host2Play-Renew
+name: Host2Play 服务器续期
 on:
   workflow_dispatch:
   schedule:
