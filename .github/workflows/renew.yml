@@ -1,4 +1,4 @@
-name: Host2Play-Renew
+name: Host2Play 服务器续期
 on:
   workflow_dispatch:
   schedule:
@@ -26,7 +26,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-          cache: pip
 
       - name: 🗂️ 缓存 NopeCHA 扩展
         id: cache-nopecha
