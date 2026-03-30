@@ -33,13 +33,6 @@ jobs:
           path: captcha_solver
           key: captcha-solver-chromium-latest-v1
 
-      - name: 🗂️ 缓存 ChromeDriver
-        id: cache-chromedriver
-        uses: actions/cache@v4
-        with:
-          path: ~/.local/share/seleniumbase/drivers
-          key: chromedriver-${{ runner.os }}
-
       - name: 🛡️ 启动 GOST 代理转发
         if: ${{ env.GOST_PROXY != '' }}
         env:
@@ -66,7 +59,6 @@ jobs:
         run: pip install seleniumbase
 
       - name: 🔧 安装 ChromeDriver
-        if: steps.cache-chromedriver.outputs.cache-hit != 'true'
         run: seleniumbase install chromedriver
 
       - name: 🧩 初始化浏览器环境
